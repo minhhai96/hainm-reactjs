@@ -7,3 +7,7 @@ export const showLoading = () => {
 export const hideLoading = () => {
     return { type: ActionTypes.HIDE_LOADING }
 };
+
+export const getCoin = () => {
+    return { type : ActionTypes.GET_COIN }
+};

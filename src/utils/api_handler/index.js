@@ -1,5 +1,5 @@
-import request from 'src/utils/api_handler/base_request';
-import qs from 'src/utils/querystring';
+import request from '../api_handler';
+import qs from '../querystring';
 
 class RequestUtils {
     constructor({ endpoint, customHeaders }) {
@@ -18,7 +18,6 @@ class RequestUtils {
 
     get({ query = {} }) {
         const queryString = qs.stringify(JSON.parse(JSON.stringify(query)));
-
         return request({
             ...this.requestOptions,
             url: `${this.endpoint}?${queryString}`,
