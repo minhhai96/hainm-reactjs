@@ -7,12 +7,11 @@ import {getCoin} from "../../actions/";
 
 const ListCoin = memo ((props) => {
 
-    const dispatch = useDispatch();
-    const { getCoin, listCoin, loading } = props;
+    const { getCoin } = props;
 
     useEffect(() => {
        getCoin()
-    },[getCoin()]);
+    },[getCoin]);
 
     return (
         <div>
@@ -34,8 +33,8 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = () => ({
+const mapDispatchToProps = {
     getCoin
-});
+};
 
 export default compose(withRouter, connect(mapStateToProps, mapDispatchToProps))(ListCoin);
